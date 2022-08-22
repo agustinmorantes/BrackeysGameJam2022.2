@@ -1,18 +1,13 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class Movement : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
     [Header("Movment")] 
     private float movementSpeed;
     [SerializeField] private float walkSpeed;
-    [SerializeField] private float sprintSpeed;
     [SerializeField] private float movementDrag;
-    [SerializeField] private float turnSpeed;
     private static float speedMultiplier = 1.5f;
     private Vector3 moveDir;
 
@@ -30,20 +25,22 @@ public class Movement : MonoBehaviour
     [SerializeField] private float crouchSpeed;
     [SerializeField] private float crouchHeight;
     private float startHeight;
-    
+    [SerializeField] private float turnSpeed;
     [SerializeField] private Transform orientation;
 
     [SerializeField] private Controls playerControls;
+    [SerializeField] private Camera playerCamera;
     
     private float horizontalInput;
     private float verticalInput;
     
     [SerializeField] private MovementState movementState;
     private Rigidbody rb;
+    private Vector2 mousePos;
+    [SerializeField] private GameObject playerBody;
     private enum MovementState
     {
         WALKING,
-        SPRINTING,
         CROUCHING,
         AIR
     }
@@ -71,8 +68,18 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        RotatePlayer();
     }
 
+    private void RotatePlayer()
+    {
+        Ray mouseRay = playerCamera.ScreenPointToRay(Input.mousePosition);
+        Plane p = new Plane( Vector3.up, playerBody.transform.position );
+        if( p.Raycast( mouseRay, out float hitDist) ){
+            Vector3 hitPoint = mouseRay.GetPoint( hitDist );
+            playerBody.transform.LookAt( hitPoint );
+        }
+    }
     #region Getters
 
     public float GetMovementSpeed()
@@ -84,12 +91,7 @@ public class Movement : MonoBehaviour
     private void StateHandler()
     {
         //Cambiar a un Switch
-        if (GroundCheck() && Input.GetKey(playerControls.sprintKey))
-        {
-            movementState = MovementState.SPRINTING;
-            movementSpeed = sprintSpeed;
-        }
-        else if (GroundCheck())
+        if (GroundCheck())
         {
             movementState = MovementState.WALKING;
             movementSpeed = walkSpeed;
@@ -150,12 +152,11 @@ public class Movement : MonoBehaviour
         if (GroundCheck()) 
             rb.AddForce(moveDir.normalized * movementSpeed * speedMultiplier,ForceMode.Force);
         else
-            rb.AddForce(moveDir.normalized * movementSpeed * speedMultiplier,ForceMode.Force);
+            rb.AddForce(moveDir.normalized * movementSpeed * speedMultiplier * airSpeed,ForceMode.Force);
         AddPlayerDrag();
         
     }
     
-
     private void SpeedLimiter()
     {
         Vector3 flatVector = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -177,4 +178,3 @@ public class Movement : MonoBehaviour
         canJump = true;
     }
 }
-
