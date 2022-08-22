@@ -1,8 +1,24 @@
 {
   "dependencies": {
-    "com.unity.collab-proxy": {
-      "version": "1.17.1",
+    "com.cyanilux.urp-blitrenderfeature": {
+      "version": "https://github.com/Cyanilux/URP_BlitRenderFeature.git",
       "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6580f62a7a9b9dd0a40cff1990ba516a648c9bee"
+    },
+    "com.deltation.toon-shader": {
+      "version": "https://github.com/Delt06/urp-toon-shader.git?path=Packages/com.deltation.toon-shader",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.render-pipelines.universal": "12.1.6"
+      },
+      "hash": "231de5492defce2abda3e6497942193b51538a10"
+    },
+    "com.unity.burst": {
+      "version": "1.7.3",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.services.core": "1.0.1"

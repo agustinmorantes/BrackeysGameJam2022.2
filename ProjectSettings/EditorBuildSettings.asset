@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/BrackeysGameJam/Scenes/SampleScene.unity
+    guid: 5c1e47a5a692e5549860eed0619097e5
   m_configObjects: {}
