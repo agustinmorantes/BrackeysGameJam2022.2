@@ -443,26 +443,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1353594351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59cc073da04ad324d9dd8a6d511dca2f, type: 3}
+  m_Script: {fileID: 11500000, guid: a31cbf14a4baf4c4fb5147741589d7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 40
-  sprintSpeed: 80
+  walkSpeed: 80
   movementDrag: 4
-  turnSpeed: 0
   canJump: 1
-  jumpForce: 11.5
-  jumpCooldown: 2.5
-  airSpeed: 0
-  playerHeight: 0.1
+  jumpForce: 8
+  jumpCooldown: 1
+  airSpeed: 0.04
+  playerHeight: 0.14
   ground:
     serializedVersion: 2
     m_Bits: 8
-  crouchSpeed: 30
+  crouchSpeed: 5
   crouchHeight: 0.5
+  turnSpeed: 0
   orientation: {fileID: 2106432210}
-  playerControls: {fileID: 0}
+  playerControls: {fileID: 1353594355}
+  playerCamera: {fileID: 963194227}
   movementState: 0
+  playerBody: {fileID: 2017535729}
 --- !u!4 &1353594354
 Transform:
   m_ObjectHideFlags: 0
