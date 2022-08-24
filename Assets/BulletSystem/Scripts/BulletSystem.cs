@@ -7,26 +7,7 @@ namespace Bullets
 {
     public class BulletSystem : MonoBehaviour
     {
-        public static BulletSystem instance { get; private set; }
-
-        private List<BulletInstance> bullets = new List<BulletInstance>();
-
-        private void Awake()
-        {
-            if (instance != null)
-            {
-                Debug.LogError("Multiple instances detected!", instance);
-                DestroyImmediate(this);
-                return;
-            }
-
-            instance = this;
-        }
-
-        private void OnDestroy()
-        {
-            instance = null;
-        }
+        private List<BulletInstance> bullets = new();
 
         private void Update()
         {
@@ -34,7 +15,7 @@ namespace Bullets
             
             foreach (var b in bullets)
             {
-                if (b.GameObject == null)
+                if (!b.GameObject)
                 {
                     toRemove.Add(b);
                     continue;
