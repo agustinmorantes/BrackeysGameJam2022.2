@@ -8,8 +8,8 @@ public class SimpleEnemy : MonoBehaviour
 {
     public BulletProperties bulletProperties;
     public float firingRate = 2;
-    
-    private IEnumerator ShootState()
+
+    public IEnumerator ShootingCoroutine()
     {
         while (true)
         {
@@ -17,17 +17,19 @@ public class SimpleEnemy : MonoBehaviour
             var dir = t.forward;
             var pos = t.position + dir * 1f + Vector3.up * 1f;
             bulletSystem.Shoot(pos, dir, bulletProperties);
-            yield return new WaitForSeconds(1.0f / firingRate);
+
+            yield return new WaitForSeconds(1f / firingRate);
         }
     }
 
-    private void OnEnable()
+    public void Aim()
     {
+        var t = transform;
+        t.LookAt(player.transform.position);
         
-    }
-
-    private void OnDisable()
-    {
-        StopAllCoroutines();
+        var rot = t.rotation;
+        var euler = rot.eulerAngles;
+        rot.eulerAngles = new(0, euler.y, euler.z);
+        t.rotation = rot;
     }
 }

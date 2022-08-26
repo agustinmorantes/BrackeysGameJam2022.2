@@ -118,15 +118,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8920171084355282744, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.66294956
       objectReference: {fileID: 0}
     - target: {fileID: 8920171084355282744, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.00004005432
       objectReference: {fileID: 0}
     - target: {fileID: 8920171084355282744, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3.1566343
       objectReference: {fileID: 0}
     - target: {fileID: 8920171084355282744, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -182,3 +182,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletProperties: {fileID: 11400000, guid: 57d76dc02fe400b4984e5733ea93837e, type: 2}
   firingRate: 2
+--- !u!114 &3933945203154070647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7351591705213313180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Shoot
+      Distance","value":{"$content":5.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!114 &6966922905757805628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7351591705213313180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe58df89b5b74a97a123b5ed2b70422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 63164f8432170bc47a56df92891f10f1, type: 2}
