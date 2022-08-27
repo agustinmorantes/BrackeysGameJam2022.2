@@ -15,6 +15,7 @@ public class SimpleEnemy : MonoBehaviour
     public float aimingAngularSpeed = 180;
     public Transform shootOrigin;
     public float lineOfSightRadius = 0.25f;
+    public LayerMask lineOfSightMask;
 
     [SerializeField]
     private Dependency<NavMeshAgent> _navMeshAgent;
@@ -50,12 +51,13 @@ public class SimpleEnemy : MonoBehaviour
     {
         var pos = shootOrigin.position;
         var playerPos = player.transform.position;
+        playerPos.y = pos.y;
         var playerDir = (playerPos - pos).normalized;
         
         var dist = Vector3.Distance(pos, playerPos);
         
         var ray = new Ray(pos, playerDir);
-        var hasLineOfSight = !Physics.SphereCast(ray, lineOfSightRadius, out var hitInfo, dist) || hitInfo.transform.CompareTag("Player");
+        var hasLineOfSight = !Physics.SphereCast(ray, lineOfSightRadius, out var hitInfo, dist, lineOfSightMask) || hitInfo.transform.CompareTag("Player");
         
         return dist < shootingDistance && hasLineOfSight;
     }
@@ -82,12 +84,13 @@ public class SimpleEnemy : MonoBehaviour
         
         var pos = shootOrigin.position;
         var playerPos = player.transform.position;
+        playerPos.y = pos.y;
         var playerDir = (playerPos - pos).normalized;
         
         var dist = Vector3.Distance(pos, playerPos);
         
         var ray = new Ray(pos, playerDir);
-        var hasLineOfSight = !Physics.SphereCast(ray, lineOfSightRadius, out var hitInfo, dist) || hitInfo.transform.CompareTag("Player");
+        var hasLineOfSight = !Physics.SphereCast(ray, lineOfSightRadius, out var hitInfo, dist, lineOfSightMask) || hitInfo.transform.CompareTag("Player");
 
         var drawDist = hasLineOfSight ? dist : hitInfo.distance;
 

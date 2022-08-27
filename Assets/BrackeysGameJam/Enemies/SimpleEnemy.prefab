@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1375641297524863415}
   - component: {fileID: 8591051051435740551}
   - component: {fileID: 5854490949098510822}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820433569440578342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1.9999199, z: 1}
+  m_LocalPosition: {x: 0, y: 0.375, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.75, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3667959251563934453}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7156918141263785656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShotOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7169653416443465140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0.654}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.40399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -139,13 +139,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimpleEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3399087845784483153, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5046566577315810717, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
       propertyPath: m_Speed
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5046566577315810717, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
-      propertyPath: m_Radius
+      propertyPath: m_Height
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046566577315810717, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5046566577315810717, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
       propertyPath: m_Acceleration
@@ -229,6 +237,9 @@ MonoBehaviour:
   aimingAngularSpeed: 180
   shootOrigin: {fileID: 7156918141263785656}
   lineOfSightRadius: 0.25
+  lineOfSightMask:
+    serializedVersion: 2
+    m_Bits: 1609
   _navMeshAgent:
     _source: 0
     _localReference: {fileID: 0}

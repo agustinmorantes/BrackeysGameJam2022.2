@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1036031395344402655
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,17 +7,18 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: EnemyBulletMat
   m_Shader: {fileID: 4800000, guid: 849dc4ff793a3f943ad21a3b6ee26456, type: 3}
   m_ValidKeywords:
   - _ADDITIONAL_LIGHTS_ENABLED
+  - _EMISSION
   - _ENVIRONMENT_LIGHTING_ENABLED
   - _FOG
-  - _RAMP_TRIPLE
+  - _FRESNEL
   m_InvalidKeywords:
   - _ZWRITE_ON
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -106,41 +94,40 @@ Material:
     - _AnisoSpecular: 0
     - _Blend: 0
     - _BumpScale: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Emission: 0
+    - _Emission: 1
     - _EnvironmentLightingEnabled: 1
+    - _EnvironmentReflections: 1
     - _Fog: 1
-    - _Fresnel: 0
+    - _Fresnel: 1
     - _FresnelSmoothness: 0.1
-    - _FresnelThickness: 0.45
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossinessSource: 0
-    - _GlossyReflections: 1
+    - _FresnelThickness: 0.659
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _Parallax: 0.005
     - _PureShadowColor: 0
     - _QueueOffset: 0
-    - _Ramp0: 0
+    - _Ramp0: -1
     - _Ramp1: 0.5
     - _RampSmoothness: 0.005
-    - _RampTriple: 1
+    - _RampTriple: 0
     - _ReceiveShadows: 1
     - _ReflectionBlend: 0.5
     - _ReflectionProbes: 0
     - _ReflectionSmoothness: 0.5
     - _Reflections: 0
     - _ShadowMask: 0
-    - _Shininess: 0
     - _Smoothness: 0.5
-    - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
-    - _SpecSource: 0
     - _Specular: 0
     - _SpecularExponent: 200
     - _SpecularHighlights: 1
@@ -148,16 +135,29 @@ Material:
     - _SpecularThreshold: 0.8
     - _SrcBlend: 1
     - _Surface: 0
-    - _UVSec: 0
     - _UseRampMap: 0
     - _VertexColor: 0
+    - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.93333334, g: 0, b: 0, a: 1}
-    - _Color: {r: 0.93333334, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 0.16760457, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 2.143547, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 2.9056604, g: 0.12335345, b: 0.12335345, a: 1}
     - _ShadowTint: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &5090302192691179442
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

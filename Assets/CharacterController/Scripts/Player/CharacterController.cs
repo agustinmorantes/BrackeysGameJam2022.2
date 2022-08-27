@@ -90,7 +90,8 @@ public class CharacterController : MonoBehaviour
         return moveDir;
     }
 
-#endregion
+    #endregion
+
     private void StateHandler()
     {
         //Cambiar a un Switch
@@ -110,9 +111,10 @@ public class CharacterController : MonoBehaviour
             movementSpeed = crouchSpeed;
         }
     }
+
     private bool GroundCheck()
     {
-       // Debug.DrawRay(orientation.position,Vector3.down * (playerHeight/2 + plusGroundConstant),Color.blue);
+        Debug.DrawRay(orientation.position, Vector3.down * (playerHeight / 2 + plusGroundConstant), Color.blue);
         return Physics.Raycast(orientation.position, Vector3.down, playerHeight / 2 + plusGroundConstant, ground);
     }
 
@@ -120,23 +122,24 @@ public class CharacterController : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        
+
         if (Input.GetKey(playerControls.jumpKey) && canJump && GroundCheck())
         {
             canJump = false;
             Jump();
-            Invoke(nameof(ResetJump),jumpCooldown);
+            Invoke(nameof(ResetJump), jumpCooldown);
         }
 
         if (Input.GetKeyDown(playerControls.crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchHeight, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f,ForceMode.Impulse);
+            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
+
         if (Input.GetKeyUp(playerControls.crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, startHeight, transform.localScale.z);
-        } 
+        }
     }
 
     private void AddPlayerDrag()
@@ -150,16 +153,15 @@ public class CharacterController : MonoBehaviour
 
     private void MovePlayer()
     {
-        moveDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDir = (orientation.forward * verticalInput + orientation.right * horizontalInput).normalized;
 
-        if (GroundCheck()) 
-            rb.AddForce(moveDir.normalized * movementSpeed * speedMultiplier,ForceMode.Force);
+        if (GroundCheck())
+            rb.AddForce(moveDir * (movementSpeed * speedMultiplier), ForceMode.Force);
         else
-            rb.AddForce(moveDir.normalized * movementSpeed * speedMultiplier * airSpeed,ForceMode.Force);
+            rb.AddForce(moveDir * (movementSpeed * speedMultiplier * airSpeed), ForceMode.Force);
         AddPlayerDrag();
-        
     }
-    
+
     private void SpeedLimiter()
     {
         Vector3 flatVector = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -173,7 +175,7 @@ public class CharacterController : MonoBehaviour
     private void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        rb.AddForce(transform.up * jumpForce,ForceMode.Impulse);
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
     private void ResetJump()
