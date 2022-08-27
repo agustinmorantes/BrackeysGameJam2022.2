@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class InteractScript : MonoBehaviour
 {
-    public Ray interactRay;
-
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("PowerUp"))
+        {
+            
+        }
     }
 }
