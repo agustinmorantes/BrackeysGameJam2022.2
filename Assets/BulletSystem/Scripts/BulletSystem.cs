@@ -22,7 +22,7 @@ namespace Bullets
                 }
 
                 var t = b.Transform;
-                b.Transform.Translate(t.forward * (b.Properties.speed * Time.deltaTime));
+                b.Transform.position += t.forward * (b.Properties.speed * Time.deltaTime);
             }
 
             bullets = bullets.Except(toRemove).ToList();
