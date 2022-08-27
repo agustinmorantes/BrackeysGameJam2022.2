@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7301558464177855908
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1091247999346202704, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966922905757805628, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: _data._objectReferences.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 63164f8432170bc47a56df92891f10f1, type: 2}
+    - target: {fileID: 7351591705213313180, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_Name
+      value: RifleEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591051051435740551, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c8901841d00f5c349a277595601a437f, type: 2}
+    m_RemovedComponents:
+    - {fileID: 2289461623116304520, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+--- !u!1 &239325234948472120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7351591705213313180, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+  m_PrefabInstance: {fileID: 7301558464177855908}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4579556576489901495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239325234948472120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6070b943788b44890886bbc8390a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletProperties: {fileID: 11400000, guid: 57d76dc02fe400b4984e5733ea93837e, type: 2}
+  firingRate: 8
+  shootingDistance: 8
+  aimingAngularSpeed: 120
+  shootOrigin: {fileID: 434073573662061340}
+  lineOfSightRadius: 0.25
+  lineOfSightMask:
+    serializedVersion: 2
+    m_Bits: 1609
+  initialWait: 0.25
+  _navMeshAgent:
+    _source: 0
+    _localReference: {fileID: 0}
+  burstBulletCount: 20
+  waitAfterBurst: 5
+--- !u!4 &434073573662061340 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7156918141263785656, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+  m_PrefabInstance: {fileID: 7301558464177855908}
+  m_PrefabAsset: {fileID: 0}

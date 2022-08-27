@@ -16,21 +16,31 @@ public class SimpleEnemy : MonoBehaviour
     public Transform shootOrigin;
     public float lineOfSightRadius = 0.25f;
     public LayerMask lineOfSightMask;
+    public float initialWait = 0.25f;
 
     [SerializeField]
     private Dependency<NavMeshAgent> _navMeshAgent;
     public NavMeshAgent NavMeshAgent => _navMeshAgent.Resolve(this);
-    
-    public IEnumerator ShootingCoroutine()
+
+    public virtual void Shoot()
     {
+        var t = transform;
+        var dir = t.forward;
+        var pos = shootOrigin.position;
+        bulletSystem.Shoot(pos, dir, bulletProperties);
+    }
+    
+    public virtual IEnumerator ShootingCoroutine()
+    {
+        var wait = new WaitForSeconds(1f / firingRate);
+
+        yield return new WaitForSeconds(initialWait);
+
         while (true)
         {
-            var t = transform;
-            var dir = t.forward;
-            var pos = shootOrigin.position;
-            bulletSystem.Shoot(pos, dir, bulletProperties);
-
-            yield return new WaitForSeconds(1f / firingRate);
+            Shoot();
+            
+            yield return wait;
         }
     }
 

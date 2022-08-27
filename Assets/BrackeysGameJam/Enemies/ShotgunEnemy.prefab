@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4041590768184109401
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667959251563934453, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966922905757805628, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: _data._objectReferences.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 63164f8432170bc47a56df92891f10f1, type: 2}
+    - target: {fileID: 7351591705213313180, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_Name
+      value: ShotgunEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591051051435740551, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47cb75a852384884e9840aadea5e313b, type: 2}
+    m_RemovedComponents:
+    - {fileID: 2289461623116304520, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+--- !u!4 &6576634529586284513 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7156918141263785656, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+  m_PrefabInstance: {fileID: 4041590768184109401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6778063499956193733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7351591705213313180, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+  m_PrefabInstance: {fileID: 4041590768184109401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4911967539603933477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6778063499956193733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24075aac591c5de46910802d1a65abb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletProperties: {fileID: 11400000, guid: 57d76dc02fe400b4984e5733ea93837e, type: 2}
+  firingRate: 0.5
+  shootingDistance: 5
+  aimingAngularSpeed: 180
+  shootOrigin: {fileID: 6576634529586284513}
+  lineOfSightRadius: 0.25
+  lineOfSightMask:
+    serializedVersion: 2
+    m_Bits: 1097
+  initialWait: 0.25
+  _navMeshAgent:
+    _source: 0
+    _localReference: {fileID: 0}
+  pellets: 3
+  angle: 30

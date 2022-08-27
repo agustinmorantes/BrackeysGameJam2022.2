@@ -32,6 +32,10 @@ namespace Bullets
         {
             var go = Instantiate(properties.prefab, pos, Quaternion.LookRotation(dir, Vector3.up));
             var rb = go.GetComponent<Rigidbody>();
+            
+            var script = go.GetComponent<Bullet>();
+            script.Properties = properties;
+            
             var bInstance = new BulletInstance()
                 { Properties = properties, GameObject = go, Transform = go.transform, Rigidbody = rb };
             bullets.Add(bInstance);
