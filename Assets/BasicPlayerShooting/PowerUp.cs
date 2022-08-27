@@ -19,7 +19,9 @@ public class PowerUp : MonoBehaviour
     {
         Debug.Log("VAMAAAA CONCHUDO");
         shoot = player.transform.root.GetComponent<PlayerShoot>();
-        shoot.weaponProperties = powerUpProp; 
+        shoot.weaponProperties = powerUpProp;
+        shoot.ammoOnPlayerLeft = powerUpProp.maxAmmo;
+        shoot.ammoOnMagLeft = powerUpProp.bulletsPerMag;
         Destroy(gameObject);
     }
 }
