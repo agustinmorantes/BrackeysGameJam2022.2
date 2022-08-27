@@ -11,6 +11,8 @@ public class Controls : MonoBehaviour
     [Header("Camera Controls")]
     public KeyCode moveCameraKey = KeyCode.Q;
 
- //   [Header("Character Actions")] 
+    [Header("Character Actions")] 
+    public KeyCode reloadKey = KeyCode.R;
+    public KeyCode interactKey = KeyCode.E;
 //    public bool shootKey = Input.GetMouseButton(0);
 }
