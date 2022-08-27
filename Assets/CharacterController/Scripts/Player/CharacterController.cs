@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Movment")] 
-    private float movementSpeed;
+    [Header("Movment")] private float movementSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float movementDrag;
     private static float speedMultiplier = 1.5f;
     private Vector3 moveDir;
 
-    [Header("Jump")] 
-    [SerializeField]private bool canJump = true;
+    [Header("Jump")] [SerializeField] private bool canJump = true;
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpCooldown;
     [SerializeField] private float airSpeed;
-    [Header("Grounded")]
-    
-    [SerializeField] private float playerHeight;
+    [Header("Grounded")] [SerializeField] private float playerHeight;
     [SerializeField] private LayerMask ground;
     private static float plusGroundConstant = 0.55f;
-    [Header("Crouching")]
-    [SerializeField] private float crouchSpeed;
+    [Header("Crouching")] [SerializeField] private float crouchSpeed;
     [SerializeField] private float crouchHeight;
     private float startHeight;
     [SerializeField] private float turnSpeed;
@@ -30,14 +25,15 @@ public class CharacterController : MonoBehaviour
 
     [SerializeField] private Controls playerControls;
     [SerializeField] private Camera playerCamera;
-    
+
     private float horizontalInput;
     private float verticalInput;
-    
+
     [SerializeField] private MovementState movementState;
     private Rigidbody rb;
     private Vector2 mousePos;
     [SerializeField] private GameObject playerBody;
+
     private enum MovementState
     {
         WALKING,
@@ -64,7 +60,7 @@ public class CharacterController : MonoBehaviour
         SpeedLimiter();
         StateHandler();
     }
-    
+
     private void FixedUpdate()
     {
         MovePlayer();
@@ -74,12 +70,14 @@ public class CharacterController : MonoBehaviour
     private void RotatePlayer()
     {
         Ray mouseRay = playerCamera.ScreenPointToRay(Input.mousePosition);
-        Plane p = new Plane( Vector3.up, playerBody.transform.position );
-        if( p.Raycast( mouseRay, out float hitDist) ){
-            Vector3 hitPoint = mouseRay.GetPoint( hitDist );
-            playerBody.transform.LookAt( hitPoint );
+        Plane p = new Plane(Vector3.up, playerBody.transform.position);
+        if (p.Raycast(mouseRay, out float hitDist))
+        {
+            Vector3 hitPoint = mouseRay.GetPoint(hitDist);
+            playerBody.transform.LookAt(hitPoint);
         }
     }
+
     #region Getters
 
     public float GetMovementSpeed()
@@ -87,7 +85,12 @@ public class CharacterController : MonoBehaviour
         return rb.velocity.magnitude;
     }
 
-    #endregion
+    public Vector3 GetMoveDir()
+    {
+        return moveDir;
+    }
+
+#endregion
     private void StateHandler()
     {
         //Cambiar a un Switch
@@ -109,7 +112,7 @@ public class CharacterController : MonoBehaviour
     }
     private bool GroundCheck()
     {
-        Debug.DrawRay(orientation.position,Vector3.down * (playerHeight/2 + plusGroundConstant),Color.blue);
+       // Debug.DrawRay(orientation.position,Vector3.down * (playerHeight/2 + plusGroundConstant),Color.blue);
         return Physics.Raycast(orientation.position, Vector3.down, playerHeight / 2 + plusGroundConstant, ground);
     }
 

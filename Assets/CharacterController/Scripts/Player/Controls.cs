@@ -6,7 +6,7 @@ public class Controls : MonoBehaviour
 {
     [Header("Character Movement")]
     public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode dashKey = KeyCode.LeftShift;
     public KeyCode crouchKey = KeyCode.LeftControl;
     [Header("Camera Controls")]
     public KeyCode moveCameraKey = KeyCode.Q;

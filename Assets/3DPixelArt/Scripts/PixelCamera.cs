@@ -29,6 +29,8 @@ public class PixelCamera : MonoBehaviour
         cameraRT.height = Screen.height / resolutionRatio;
         cameraRT.filterMode = FilterMode.Point;
         cameraRT.antiAliasing = 1;
+        cameraRT.format = RenderTextureFormat.DefaultHDR;
         Camera.targetTexture = cameraRT;
+        Camera.allowHDR = true;
     }
 }
