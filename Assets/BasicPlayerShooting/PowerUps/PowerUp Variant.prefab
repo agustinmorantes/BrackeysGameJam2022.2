@@ -13,63 +13,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.116914
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.116914
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.116914
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.44
+      value: -6.0584
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71
+      value: 0.56061
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -0.32258
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7072302
+      value: 0.61375517
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7069834
+      value: -0.61354095
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.35127333
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.351396
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -89.98
+      value: -30.415
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 89.977
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: -89.988
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f1d3c4ac2491f4ca4b3f84efef6ecd3d, type: 2}
+    - target: {fileID: -5754084199372789682, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: b2019a2e4e5e9464994fb97645ef3c95, type: 2}
     - target: {fileID: 919132149155446097, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
       propertyPath: m_Name
-      value: PowerUp
+      value: PowerUp Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe9dfce8f5b8b42b09a7f82b54ec3992, type: 3}
@@ -104,7 +116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpProp: {fileID: 11400000, guid: a053a3a4fb69140259ed55c668108d8d, type: 2}
-  shoot: {fileID: 0}
 --- !u!114 &192471686
 MonoBehaviour:
   m_ObjectHideFlags: 0
