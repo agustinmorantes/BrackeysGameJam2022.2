@@ -15,21 +15,32 @@ public class SimpleEnemy : MonoBehaviour
     public float aimingAngularSpeed = 180;
     public Transform shootOrigin;
     public float lineOfSightRadius = 0.25f;
+    public LayerMask lineOfSightMask;
+    public float initialWait = 0.25f;
 
     [SerializeField]
     private Dependency<NavMeshAgent> _navMeshAgent;
     public NavMeshAgent NavMeshAgent => _navMeshAgent.Resolve(this);
-    
-    public IEnumerator ShootingCoroutine()
+
+    public virtual void Shoot()
     {
+        var t = transform;
+        var dir = t.forward;
+        var pos = shootOrigin.position;
+        bulletSystem.Shoot(pos, dir, bulletProperties);
+    }
+    
+    public virtual IEnumerator ShootingCoroutine()
+    {
+        var wait = new WaitForSeconds(1f / firingRate);
+
+        yield return new WaitForSeconds(initialWait);
+
         while (true)
         {
-            var t = transform;
-            var dir = t.forward;
-            var pos = shootOrigin.position;
-            bulletSystem.Shoot(pos, dir, bulletProperties);
-
-            yield return new WaitForSeconds(1f / firingRate);
+            Shoot();
+            
+            yield return wait;
         }
     }
 
@@ -50,12 +61,13 @@ public class SimpleEnemy : MonoBehaviour
     {
         var pos = shootOrigin.position;
         var playerPos = player.transform.position;
+        playerPos.y = pos.y;
         var playerDir = (playerPos - pos).normalized;
         
         var dist = Vector3.Distance(pos, playerPos);
         
         var ray = new Ray(pos, playerDir);
-        var hasLineOfSight = !Physics.SphereCast(ray, lineOfSightRadius, out var hitInfo, dist) || hitInfo.transform.CompareTag("Player");
+        var hasLineOfSight = !Physics.SphereCast(ray, lineOfSightRadius, out var hitInfo, dist, lineOfSightMask) || hitInfo.transform.CompareTag("Player");
         
         return dist < shootingDistance && hasLineOfSight;
     }
@@ -82,12 +94,13 @@ public class SimpleEnemy : MonoBehaviour
         
         var pos = shootOrigin.position;
         var playerPos = player.transform.position;
+        playerPos.y = pos.y;
         var playerDir = (playerPos - pos).normalized;
         
         var dist = Vector3.Distance(pos, playerPos);
         
         var ray = new Ray(pos, playerDir);
-        var hasLineOfSight = !Physics.SphereCast(ray, lineOfSightRadius, out var hitInfo, dist) || hitInfo.transform.CompareTag("Player");
+        var hasLineOfSight = !Physics.SphereCast(ray, lineOfSightRadius, out var hitInfo, dist, lineOfSightMask) || hitInfo.transform.CompareTag("Player");
 
         var drawDist = hasLineOfSight ? dist : hitInfo.distance;
 
