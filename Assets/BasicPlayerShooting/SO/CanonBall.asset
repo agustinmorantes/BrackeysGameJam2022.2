@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369960ab8b474e30847d3ce48b5454cc, type: 3}
   m_Name: CanonBall
   m_EditorClassIdentifier: 
-  speed: 0
-  damage: 0
+  speed: 10
+  damage: 50
   origin: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: 9196128610628888220, guid: 26bff31a3033f4228bd91b4197fb83da, type: 3}
