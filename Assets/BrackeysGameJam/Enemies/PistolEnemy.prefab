@@ -135,6 +135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 902657042318788156, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
+      propertyPath: maxHP
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3399087845784483153, guid: 5e27ddba7a18aef48aecefabc5489b5e, type: 3}
       propertyPath: m_Name
       value: PistolEnemy

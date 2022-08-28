@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5872826037472543105}
   - component: {fileID: -794437958903266687}
   - component: {fileID: 9017337201771348814}
-  m_Layer: 2
-  m_Name: TestBullet
+  m_Layer: 8
+  m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 256036ee72eb91547a6b8fd1f4ecc6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  afterHitParticlesPrefab: {fileID: 0}
