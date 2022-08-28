@@ -6,7 +6,9 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     public WeaponProperties powerUpProp;
-    public PlayerShoot shoot;
+    
+    private PlayerShoot shoot;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.root.CompareTag("Player"))
