@@ -21,7 +21,6 @@ namespace BrackeysGameJam
                     _instance = go.GetComponent<GameManager>();
                 }
                 
-                DontDestroyOnLoad(_instance.gameObject);
                 return _instance;
             }
         }

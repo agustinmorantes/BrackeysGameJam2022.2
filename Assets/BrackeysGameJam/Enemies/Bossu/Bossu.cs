@@ -1,6 +1,7 @@
 using System.Collections;
 using Bullets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static BrackeysGameJam.Globals;
 
 public class Bossu : MonoBehaviour
@@ -141,5 +142,10 @@ public class Bossu : MonoBehaviour
 
         var t = transform;
         t.position = new(posX, t.position.y, t.position.z);
+    }
+
+    public void OnBossDeath()
+    {
+        SceneManager.LoadScene(2);
     }
 }

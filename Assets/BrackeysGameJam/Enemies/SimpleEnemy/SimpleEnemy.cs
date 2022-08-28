@@ -17,6 +17,7 @@ public class SimpleEnemy : MonoBehaviour
     public float lineOfSightRadius = 0.25f;
     public LayerMask lineOfSightMask;
     public float initialWait = 0.25f;
+    public float initialDetectionRange = 10;
 
     [SerializeField]
     private Dependency<NavMeshAgent> _navMeshAgent;
@@ -28,6 +29,12 @@ public class SimpleEnemy : MonoBehaviour
         var dir = t.forward;
         var pos = shootOrigin.position;
         bulletSystem.Shoot(pos, dir, bulletProperties);
+    }
+
+    public virtual bool IsPlayerInDetectionRange()
+    {
+        var dist = Vector3.Distance(player.transform.position, transform.position);
+        return dist < initialDetectionRange;
     }
     
     public virtual IEnumerator ShootingCoroutine()
