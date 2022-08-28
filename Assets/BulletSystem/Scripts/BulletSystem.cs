@@ -9,6 +9,8 @@ namespace Bullets
     {
         private List<BulletInstance> bullets = new();
 
+        private const double BULLET_DESPAWN_TIME = 10;
+
         private void Update()
         {
             var toRemove = new List<BulletInstance>();
@@ -17,6 +19,13 @@ namespace Bullets
             {
                 if (!b.GameObject)
                 {
+                    toRemove.Add(b);
+                    continue;
+                }
+
+                if (b.SpawnTime + BULLET_DESPAWN_TIME < Time.time)
+                {
+                    Destroy(b.GameObject);
                     toRemove.Add(b);
                     continue;
                 }
@@ -37,7 +46,7 @@ namespace Bullets
             script.Properties = properties;
             
             var bInstance = new BulletInstance()
-                { Properties = properties, GameObject = go, Transform = go.transform, Rigidbody = rb };
+                { Properties = properties, GameObject = go, Transform = go.transform, Rigidbody = rb, SpawnTime = Time.time};
             bullets.Add(bInstance);
         }
 
@@ -47,6 +56,8 @@ namespace Bullets
             public GameObject GameObject { get; set; }
             public Transform Transform { get; set; }
             public Rigidbody Rigidbody { get; set; }
+            
+            public double SpawnTime { get; set; }
         }
     }
 }

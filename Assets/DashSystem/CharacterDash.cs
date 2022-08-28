@@ -19,7 +19,16 @@ public class CharacterDash : MonoBehaviour
 
     [Header("Cooldown")] 
     [SerializeField] private float dashCooldown;
+
+    public float invincibilityDuration = 0.8f;
+    
+    private float invincibiityTimer;
     private float coolDownTimer;
+
+    public GameObject hurtBox;
+    public GameObject InvincibilityBox;
+
+    private bool invincibilityActive;
 
     private void Start()
     {
@@ -30,7 +39,18 @@ public class CharacterDash : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(playerControls.dashKey)) Dash();
+        if (Input.GetKeyDown(playerControls.dashKey) && coolDownTimer < Time.time)
+        {
+            Dash();
+        }
+
+        if (invincibilityActive && invincibiityTimer < Time.time)
+        {
+            hurtBox.SetActive(true);
+            InvincibilityBox.SetActive(false);
+            invincibilityActive = false;
+        }
+
         DrawDashVector();
     }
 
@@ -39,7 +59,11 @@ public class CharacterDash : MonoBehaviour
         Vector3 forceToApply = characterController.GetMoveDir().normalized * dashForce;
         rb.AddForce(forceToApply,ForceMode.Impulse);
 
-        Invoke(nameof(ResetDash),dashDuration);
+        hurtBox.SetActive(false);
+        InvincibilityBox.SetActive(true);
+        invincibilityActive = true;
+        invincibiityTimer = Time.time + invincibilityDuration;
+        coolDownTimer = Time.time + dashCooldown;
     }
 
     private void DrawDashVector()
