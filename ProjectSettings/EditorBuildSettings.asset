@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BrackeysGameJam/Scenes/SampleScene.unity
     guid: 5c1e47a5a692e5549860eed0619097e5
+  - enabled: 1
+    path: Assets/BrackeysGameJam/Scenes/Game Over.unity
+    guid: 81c7f819ad5c5954cb65daef9b41384c
+  - enabled: 1
+    path: Assets/BrackeysGameJam/Scenes/Win.unity
+    guid: f64e33c0ed3483e46a15188d147849fb
   m_configObjects: {}
