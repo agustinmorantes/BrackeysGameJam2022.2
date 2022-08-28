@@ -51,6 +51,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5020110720621925361, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: died.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4911967539603933477}
+    - target: {fileID: 5020110720621925361, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
+      propertyPath: died.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDeath
+      objectReference: {fileID: 0}
     - target: {fileID: 6966922905757805628, guid: 00c2b6afbce166449833f25025e6e7f8, type: 3}
       propertyPath: _data._objectReferences.Array.data[0]
       value: 
@@ -98,6 +106,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1097
   initialWait: 0.25
+  initialDetectionRange: 10
   _navMeshAgent:
     _source: 0
     _localReference: {fileID: 0}

@@ -114,4 +114,9 @@ public class SimpleEnemy : MonoBehaviour
         Gizmos.color = hasLineOfSight ? Color.green : Color.red;
         Gizmos.DrawRay(pos, playerDir * drawDist);
     }
+
+    public void OnDeath()
+    {
+        Destroy(gameObject);
+    }
 }

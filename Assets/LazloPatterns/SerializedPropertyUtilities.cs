@@ -5,6 +5,9 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEditor;
 
+#if UNITY_EDITOR
+
+
 namespace Lazlo
 {
 	public static class SerializedPropertyUtility
@@ -338,3 +341,5 @@ namespace Lazlo
 		#endregion
 	}
 }
+
+#endif
