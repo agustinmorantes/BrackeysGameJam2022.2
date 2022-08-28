@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8672237319783242615}
   - component: {fileID: 8672237319783242610}
   - component: {fileID: 8672237319783242611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpProp: {fileID: 11400000, guid: 33f8ab16b4f494e20b068857cd467a61, type: 2}
-  shoot: {fileID: 0}
 --- !u!114 &8672237319783242611
 MonoBehaviour:
   m_ObjectHideFlags: 0

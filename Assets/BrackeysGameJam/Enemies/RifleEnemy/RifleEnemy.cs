@@ -12,15 +12,17 @@ public class RifleEnemy : SimpleEnemy
         var wait = new WaitForSeconds(1f / firingRate);
         var burstWait = new WaitForSeconds(waitAfterBurst);
 
+        yield return new WaitForSeconds(initialWait);
+
         while (true)
         {
-            yield return burstWait;
-            
             for (int i = 0; i < burstBulletCount; i++)
             {
                 Shoot();
                 yield return wait;
             }
+            
+            yield return burstWait;
         }
     }
 }
