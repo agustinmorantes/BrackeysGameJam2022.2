@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369960ab8b474e30847d3ce48b5454cc, type: 3}
   m_Name: PowerUpTest
   m_EditorClassIdentifier: 
-  speed: 0
-  damage: 0
+  speed: 15
+  damage: 20
   origin: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: 8935587015263622523, guid: 4073bb414c35fc240ae76b0860fc9ee7, type: 3}

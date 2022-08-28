@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1c3ee335525d4ae8ac77c2ec7fe9719, type: 3}
-  m_Name: PowerWeaponTest
+  m_Script: {fileID: 11500000, guid: 369960ab8b474e30847d3ce48b5454cc, type: 3}
+  m_Name: RapidFireBullet
   m_EditorClassIdentifier: 
-  rateOfFire: 0.5
-  maxAmmo: 100
-  ammoConsumedPerShot: 10
-  bulletsPerMag: 40
-  bulletProperties: {fileID: 11400000, guid: ddd445926287e49df9e59ba8656cd141, type: 2}
+  speed: 30
+  damage: 10
+  origin: 0
+  prefab: {fileID: 8935587015263622523, guid: 4073bb414c35fc240ae76b0860fc9ee7, type: 3}

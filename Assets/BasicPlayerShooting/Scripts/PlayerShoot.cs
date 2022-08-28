@@ -45,7 +45,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Reload(int amount)
     {
-        ammoOnMagLeft += amount;
+        ammoOnMagLeft = amount;
         ammoOnPlayerLeft -= amount;
     }
 

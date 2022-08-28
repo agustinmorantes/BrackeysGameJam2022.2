@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1c3ee335525d4ae8ac77c2ec7fe9719, type: 3}
-  m_Name: PowerWeaponTest
+  m_Name: Canon
   m_EditorClassIdentifier: 
-  rateOfFire: 0.5
-  maxAmmo: 100
-  ammoConsumedPerShot: 10
-  bulletsPerMag: 40
-  bulletProperties: {fileID: 11400000, guid: ddd445926287e49df9e59ba8656cd141, type: 2}
+  rateOfFire: 0
+  maxAmmo: 0
+  ammoConsumedPerShot: 0
+  bulletsPerMag: 0
+  bulletProperties: {fileID: 0}
