@@ -17,7 +17,6 @@ public class PowerUp : MonoBehaviour
 
     private void PickUp(Collider player)
     {
-        Debug.Log("VAMAAAA CONCHUDO");
         shoot = player.transform.root.GetComponent<PlayerShoot>();
         shoot.weaponProperties = powerUpProp;
         shoot.ammoOnPlayerLeft = powerUpProp.maxAmmo;
