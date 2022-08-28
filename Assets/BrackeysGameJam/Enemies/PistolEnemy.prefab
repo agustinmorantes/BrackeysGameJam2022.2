@@ -245,6 +245,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1097
   initialWait: 0.25
+  initialDetectionRange: 8
   _navMeshAgent:
     _source: 0
     _localReference: {fileID: 0}
